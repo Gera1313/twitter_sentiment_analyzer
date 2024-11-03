@@ -20,3 +20,6 @@ else:
     print("All environment variables loaded successfully.")
 
 # Authenticate to Twitter/X
+auth = tweepy.OAuthHandler(api_key, api_secret)
+auth.set_access_token(access_token, access_token_secret)
+
