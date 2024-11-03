@@ -34,8 +34,13 @@ try:
 except Exception as e:
     print("Error during authentication", e)
 
-# Fetch tweets
-def fetch_tweets(keyword, count=10):
-    tweets = api.search_tweets(q=keyword, count=count, lang='en', tweet_mode='extended')
-    for tweet in tweets:
-        print(tweet.full_text)
+def fetch_user_tweets(username, count=10):
+    try:
+        tweets = api.user_timeline(screen_name=username, count=count, tweet_mode='extended')
+        for tweet in tweets:
+            print(f"{tweet.user.screen_name}: {tweet.full_text}\n")
+    except tweepy.TweepError as e:
+        print(f"Failed to fetch tweets: {e}")
+
+# Example usage
+fetch_user_tweets("mooncat1313", count=10)  # Replace "jack" with any valid username
