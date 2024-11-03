@@ -18,3 +18,5 @@ if not all([api_key, api_secret, access_token, access_token_secret]):
     raise ValueError("One or more environment variables for Twitter API keys are missing.")
 else:
     print("All environment variables loaded successfully.")
+
+# Authenticate to Twitter/X
