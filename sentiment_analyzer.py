@@ -34,7 +34,8 @@ try:
 except Exception as e:
     print("Error during authentication", e)
 
-# Fetch recent tweets
-tweets = api.home_timeline(count=5)
-for tweet in tweets:
-    print(f"{tweet.user.name} said: {tweet.text}")
+# Fetch tweets
+def fetch_tweets(keyword, count=10):
+    tweets = api.search_tweets(q=keyword, count=count, lang='en', tweet_mode='extended')
+    for tweet in tweets:
+        print(tweet.full_text)
