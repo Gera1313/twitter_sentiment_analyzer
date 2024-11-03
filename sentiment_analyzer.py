@@ -1,5 +1,6 @@
 from dotenv import load_dotenv
 import os
+import tweepy
 
 # Get the API keys from environment variables
 load_dotenv()
