@@ -6,8 +6,8 @@ load_dotenv()
 
 api_key = os.getenv('TWITTER_API_KEY')
 api_secret = os.getenv('TWITTER_API_SECRET')
-access_token = os.getenv('access_token_here')
-access_token_secret = os.getenv('secret_access_token_here')
+access_token = os.getenv('TWITTER_ACCESS_TOKEN')
+access_token_secret = os.getenv('TWITTER_ACCESS_TOKEN_SECRET')
 
 # Check if all variables were loaded correctly
 if not all([api_key, api_secret, access_token, access_token_secret]):
